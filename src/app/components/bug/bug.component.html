@@ -1,0 +1,8 @@
+<!-- <app-add-bug (addNewBug)="onAddBug($event)"></app-add-bug> -->
+
+<app-list-bug
+  (editBug)="onUpdateBug($event)"
+  (deleteBug)="onDeleteBug($event)"
+  [bugList]="bugs"
+  [commentList]="comments"
+></app-list-bug>

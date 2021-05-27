@@ -1,0 +1,107 @@
+<div class="conntainer my-4 p-4">
+  <h2 class="mb-4 text-center">Report New Bug</h2>
+
+  <div class="row">
+    <div class="col col-sm-12">
+      <form novalidate [formGroup]="bugFormGroup" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              formControlName="title"
+              class="form-control"
+              id="title"
+              name="title"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              formControlName="description"
+              name="description"
+              cols="12"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select
+              type="string"
+              [value]=""
+              formControlName="priority"
+              class="form-control"
+              id="priority"
+              name="priority"
+            >
+              <option>--Select--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reporter">Reporter</label>
+            <select
+              type="string"
+              [value]=""
+              formControlName="reporter"
+              class="form-control"
+              id="reporter"
+              name="reporter"
+            >
+              <option>--Select--</option>
+              <option value="QA">QA</option>
+              <option value="PO">PO</option>
+              <option value="DEV">DEV</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select
+              type="string"
+              [value]=""
+              formControlName="status"
+              class="form-control"
+              id="status"
+              name="status"
+            >
+              <option>--Select--</option>
+              <option value="1">Testing</option>
+              <option value="2">Done</option>
+              <option value="3">Rejected</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Comments</label>
+            <textarea
+              class="form-control"
+              id="comment"
+              formControlName="comments"
+              name="comment"
+              cols="12"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group my-5">
+          <div class="col-sm-4 offset-sm-2">
+            <button type="submit" class="btn btn-primary mr-2">Save</button>
+            <button
+              type="reset"
+              class="btn btn-outline-primary"
+              (click)="cancel()"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
