@@ -3,10 +3,15 @@
 
   <div class="row">
     <div class="col col-sm-12">
-      <form novalidate [formGroup]="bugFormGroup" (ngSubmit)="onSubmit()">
+      <form
+        class="star"
+        novalidate
+        [formGroup]="bugFormGroup"
+        (ngSubmit)="onSubmit()"
+      >
         <div>
           <div class="form-group">
-            <label for="title">Title</label>
+            <label for="title"><span>*</span> Title</label>
             <input
               type="text"
               formControlName="title"
@@ -17,7 +22,7 @@
           </div>
 
           <div class="form-group">
-            <label for="description">Description</label>
+            <label for="description"><span>*</span> Description</label>
             <textarea
               class="form-control"
               id="description"
@@ -28,7 +33,7 @@
           </div>
 
           <div class="form-group">
-            <label for="priority">Priority</label>
+            <label for="priority"><span>*</span> Priority</label>
             <select
               type="string"
               [value]=""
@@ -45,7 +50,7 @@
           </div>
 
           <div class="form-group">
-            <label for="reporter">Reporter</label>
+            <label for="reporter"><span>*</span> Reporter</label>
             <select
               type="string"
               [value]=""
@@ -79,7 +84,7 @@
           </div>
 
           <div class="form-group">
-            <label for="comment">Comments</label>
+            <label for="comment"><span>*</span> Comments</label>
             <textarea
               class="form-control"
               id="comment"
@@ -89,17 +94,15 @@
             ></textarea>
           </div>
         </div>
-        <div class="form-group my-5">
-          <div class="col-sm-4 offset-sm-2">
-            <button type="submit" class="btn btn-primary mr-2">Save</button>
-            <button
-              type="reset"
-              class="btn btn-outline-primary"
-              (click)="cancel()"
-            >
-              Cancel
-            </button>
-          </div>
+        <div class="form-group my-5 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary mr-2">Save</button>
+          <button
+            type="reset"
+            class="btn btn-outline-primary"
+            (click)="cancel()"
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>
